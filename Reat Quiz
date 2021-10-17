@@ -6,6 +6,17 @@ rooms = [
   ];
 And produces the following output:
 <ol><li>Queen, 5, $100</li><li>Double, 3, $75</li><li>Twin, 8, $60</li></ol>
+
+Ans:   
+        getRoomInfo = (rooms) => {
+            return (
+                <ol>
+                    {rooms.forEach(item =>{
+                         return <li>{item.room_type}, {item.vacant_rooms}, ${item.price}</li>
+                    })}
+                </ol>
+            )
+        }
   
  
 2. Write a function in Javascript, which receives NUMBER and has the next logic:
@@ -14,6 +25,19 @@ b) it prints "bar" if NUMBER is divisible by 7;
 c) it prints "foobar" if NUMBER is divisible by 14;
 d) it prints NUMBER value for other cases;
 note: NUMBER is a positive integer number;
+
+Ans:
+        function checkDivisible(num){
+            if(num%2===0){
+                console.log("foo")
+            }else if(num%7===0){
+                console.log("bar")
+            }else if(num%14===0){
+                console.log("foobar")
+            }else{
+                return num
+            }
+        }
  
  
 3. Let's say you have a file with a following structure:
@@ -25,7 +49,27 @@ note: NUMBER is a positive integer number;
 
 Write a function in node.js that reads this file and returns the number, which is a sum of all "value" numbers from the file;
 
- 
+Ans:
+
+        async function processLineByLine() {
+          const fs = require('fs');
+          const readline = require('readline');
+          //assume the file path is input.txt
+          const fileStream = fs.createReadStream('input.txt');
+          let sum = 0
+
+          const rl = readline.createInterface({
+            input: fileStream,
+            crlfDelay: Infinity
+          });
+
+          for await (const line of rl) {
+            console.log(`Line from file: ${line}`);
+            let value = line.split(",")
+            sum += parseInt(value.pop())
+          }
+          return sum
+        }
 
 
 
@@ -54,6 +98,18 @@ if (province == 'ONTARIO') {
    amt = base;
    calc = 2 * basis(amt) + extra(amt) * 1.05;
 }
+
+Ans: 
+        const rates = {
+            ONTARIO: 'ONTARIO_RATE',
+            QUEBEC: 'QUEBEC_RATE',
+            ALBERTA: "ALBERTA_RATE",
+            OTHER_PROVINCE: 1
+        }
+        rate = rate[province]
+        amt = base * rate;
+        calc = 2 * basis(amt) + extra(amt) * 1.05;
+        province == 'QUEBEC' ? points = 2 : ''
 
 
 
