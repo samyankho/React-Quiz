@@ -112,11 +112,3 @@ Ans:
         province == 'QUEBEC' ? points = 2 : ''
 
 
-
-5. Write a small react or react native app that uses this weather api:
-https://www.metaweather.com/api/ *
-Your app should allow the user to search for a city and see that day's forecast.
-Styling is not important, you can use default browser styles.
-
-*Note: some people have reported that this API does not have CORS enabled on their server, in this case if you are having difficulty with CORS you can launch chrome with CORS disabled: https://stackoverflow.com/questions/3102819/disable-same-origin-policy-in-chrome or you can select a different API of your preference: https://rapidapi.com/category/Weather
-
